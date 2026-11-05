@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PashuOLX | Buy & Sell Desi Cows, Buffaloes & Livestock India</title>
+    <meta name="description" content="Buy and sell purebred Desi cows, high-yield Murrah buffaloes, Gir, Sahiwal, Punganur, HF, and calves. Verified milk records, Cow Aadhaar, and zero middleman commission.">
+    <meta name="keywords" content="buy cow online, desi cow for sale, gir cow, punganur cow, murrah buffalo, sahiwal cow, pashu olx, golx cow">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- TOP HEADER -->
+    <header class="olx-header">
+        <div class="header-inner container">
+            <!-- Brand Logo -->
+            <a href="#" class="olx-logo" id="homeLogoBtn">
+                <span class="logo-icon-svg"><i class="fa-solid fa-cow"></i></span>
+                <span class="logo-text">PASHU<span class="logo-accent">OLX</span></span>
+            </a>
+
+            <!-- Search Bar -->
+            <div class="olx-search-box">
+                <i class="fa-solid fa-magnifying-glass search-leading-icon"></i>
+                <input type="text" id="keywordSearchInput" placeholder="Search Gir Cow, Murrah Buffalo, Punganur, Sahiwal, Rajasthan, Punjab..." autocomplete="off">
+                <button class="search-submit-btn" id="searchSubmitBtn" title="Search">
+                    Search
+                </button>
+            </div>
+
+            <!-- Header Action Icons (Chat & Wishlist & Profile & Sell) -->
+            <div class="header-user-actions">
+                <button class="header-icon-btn" id="openChatListBtn" title="My Chats">
+                    <i class="fa-regular fa-comment-dots"></i>
+                    <span class="action-btn-text">Chats</span>
+                </button>
+
+                <button class="header-icon-btn" id="openFavoritesBtn" title="Saved Cattle / Wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                    <span class="action-btn-text">Saved (<span id="favBadge">0</span>)</span>
+                </button>
+
+                <!-- Post Free Ad Button (+ SELL) -->
+                <button class="olx-sell-btn" id="openSellModalBtn">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>+ SELL CATTLE</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- PROMOTIONAL HERO BANNER -->
+    <section class="olx-promo-strip">
+        <div class="container promo-inner">
+            <div class="promo-text">
+                <h2>Direct Cow & Buffalo Marketplace India 🐄</h2>
+                <p>Cow Aadhaar Verified • 100% Direct Farmer-to-Buyer Trade • Zero Brokerage</p>
+            </div>
+            <div class="promo-actions">
+                <button class="promo-sell-btn" id="promoPostAdBtn">
+                    <i class="fa-solid fa-circle-plus"></i> Post Free Cattle Ad
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- BREED DISCOVERY QUICK BAR -->
+    <section class="container breed-bubbles-section">
+        <div class="bubble-scroll">
+            <div class="breed-bubble active" data-bubble-breed="all">
+                <div class="bubble-icon"><i class="fa-solid fa-border-all"></i></div>
+                <span>All Breeds</span>
+            </div>
+            <div class="breed-bubble" data-bubble-breed="Gir">
+                <div class="bubble-img"><img src="./images/cow_gir.jpg" alt="Gir"></div>
+                <span>Gir (गीर)</span>
+            </div>
+            <div class="breed-bubble" data-bubble-breed="Murrah">
+                <div class="bubble-img"><img src="./images/cow_murrah_buffalo.jpg" alt="Murrah"></div>
+                <span>Murrah (मुर्राह)</span>
+            </div>
+            <div class="breed-bubble" data-bubble-breed="Punganur">
+                <div class="bubble-img"><img src="./images/cow_punganur.jpg" alt="Punganur"></div>
+                <span>Punganur (పుంగనూరు)</span>
+            </div>
+            <div class="breed-bubble" data-bubble-breed="Sahiwal">
+                <div class="bubble-img"><img src="./images/cow_sahiwal_red.jpg" alt="Sahiwal"></div>
+                <span>Sahiwal (साहीवाल)</span>
+            </div>
+            <div class="breed-bubble" data-bubble-breed="Holstein Friesian">
+                <div class="bubble-img"><img src="./images/cow_hf_calf.jpg" alt="HF Cow"></div>
+                <span>HF Cross (एचएफ)</span>
+            </div>
+            <div class="breed-bubble" data-bubble-breed="Jafarabadi">
+                <div class="bubble-img"><img src="./images/cow_jafarabadi.jpg" alt="Jafarabadi"></div>
+                <span>Jafarabadi (जाफराबादी)</span>
+            </div>
+            <div class="breed-bubble" data-bubble-breed="Rathi">
+                <div class="bubble-img"><img src="./images/cow_rathi.jpg" alt="Rathi"></div>
+                <span>Rathi (राठी)</span>
+            </div>
+            <div class="breed-bubble" data-bubble-breed="Desi">
+                <div class="bubble-img"><img src="./images/cow_desi_black.jpg" alt="Desi"></div>
+                <span>Local / Desi (देसी)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN TWO-COLUMN BODY LAYOUT -->
+    <main class="container main-content-layout">
+        
+        <!-- ================================================================= -->
+        <!-- LEFT FILTER SIDEBAR (Clean GoLX Modern Design from Picture 1) -->
+        <!-- ================================================================= -->
+        <aside class="golx-sidebar-card">
+            <div class="golx-filter-header">
+                <div class="golx-filter-title">
+                    <i class="fa-solid fa-sliders"></i> Filter Listings
+                </div>
+                <button class="golx-clear-btn" id="clearAllFiltersBtn">Clear All</button>
+            </div>
+
+            <!-- 1. LISTING TYPE -->
+            <div class="golx-filter-group">
+                <label class="golx-group-label">LISTING TYPE</label>
+                <div class="golx-pills-row" id="listingTypePills">
+                    <button type="button" class="golx-pill active" data-type="all">All</button>
+                    <button type="button" class="golx-pill" data-type="sale">For Sale</button>
+                    <button type="button" class="golx-pill pill-adoption" data-type="adoption">For Adoption</button>
+                </div>
+            </div>
+
+            <!-- 2. SORT BY -->
+            <div class="golx-filter-group">
+                <label class="golx-group-label">SORT BY</label>
+                <div class="golx-select-wrap">
+                    <select id="sortSelect" class="golx-select">
+                        <option value="newest">Newest First</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="milk-high">Daily Milk: High to Low</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down select-chevron"></i>
+                </div>
+            </div>
+
+            <!-- 3. BREED -->
+            <div class="golx-filter-group">
+                <label class="golx-group-label">BREED</label>
+                <div class="golx-select-wrap">
+                    <select id="sidebarBreedSelect" class="golx-select">
+                        <option value="">All Breeds</option>
+                        <optgroup label="Desi Indigenous Cows (देशी गायें)">
+                            <option value="Gir">Gir (गीर गाय)</option>
+                            <option value="Punganur">Punganur (పుంగనూరు / पुंगनूर)</option>
+                            <option value="Sahiwal">Sahiwal (साहीवाल)</option>
+                            <option value="Rathi">Rathi (राठी)</option>
+                            <option value="Tharparkar">Tharparkar (थारपारकर)</option>
+                            <option value="Kankrej">Kankrej (कांकरेज)</option>
+                            <option value="Red Sindhi">Red Sindhi (लाल सिंधी)</option>
+                            <option value="Desi">Local / Mixed (देसी)</option>
+                        </optgroup>
+                        <optgroup label="Commercial Cows">
+                            <option value="Holstein Friesian">HF Cross (एचएफ क्रॉस)</option>
+                            <option value="Jersey">Jersey (जर्सी)</option>
+                        </optgroup>
+                        <optgroup label="Buffaloes (भैंसें)">
+                            <option value="Murrah">Murrah (मुर्राह)</option>
+                            <option value="Jafarabadi">Jafarabadi (जाफराबादी)</option>
+                            <option value="Mehsani">Mehsani (मेहसाणी)</option>
+                            <option value="Nili-Ravi">Nili-Ravi (नीली-रावी)</option>
+                            <option value="Banni">Banni (बन्नी)</option>
+                        </optgroup>
+                    </select>
+                    <i class="fa-solid fa-chevron-down select-chevron"></i>
+                </div>
+            </div>
+
+            <!-- 4. GENDER / ANIMAL TYPE -->
+            <div class="golx-filter-group">
+                <label class="golx-group-label">GENDER</label>
+                <div class="golx-pills-wrap" id="genderPills">
+                    <button type="button" class="golx-pill active" data-gender="all">All</button>
+                    <button type="button" class="golx-pill" data-gender="cow">Cow</button>
+                    <button type="button" class="golx-pill" data-gender="bull">Bull</button>
+                    <button type="button" class="golx-pill" data-gender="calf-f">Calf ♀</button>
+                    <button type="button" class="golx-pill" data-gender="calf-m">Calf ♂</button>
+                    <button type="button" class="golx-pill" data-gender="heifer">Heifer</button>
+                </div>
+            </div>
+
+            <!-- 5. ALL STATES -->
+            <div class="golx-filter-group">
+                <label class="golx-group-label">ALL STATES</label>
+                <div class="golx-select-wrap">
+                    <select id="stateSelect" class="golx-select">
+                        <option value="All States">All States</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down select-chevron"></i>
+                </div>
+            </div>
+
+            <!-- 6. PRICE RANGE -->
+            <div class="golx-filter-group">
+                <label class="golx-group-label">PRICE RANGE</label>
+                <div class="golx-price-inputs">
+                    <input type="number" id="minPriceInput" placeholder="Min ₹" min="0" step="1000">
+                    <input type="number" id="maxPriceInput" placeholder="Max ₹" min="0" step="1000">
+                </div>
+            </div>
+
+            <!-- 7. DAILY MILK YIELD -->
+            <div class="golx-filter-group">
+                <div class="golx-split-label">
+                    <label class="golx-group-label">MIN MILK YIELD</label>
+                    <span class="golx-val-badge" id="milkFilterVal">0 L/Day</span>
+                </div>
+                <input type="range" id="sidebarMilkRange" min="0" max="35" value="0" step="1" class="golx-range">
+                <div class="range-limits">
+                    <span>0 L</span>
+                    <span>15 L</span>
+                    <span>35+ L</span>
+                </div>
+            </div>
+
+            <!-- 8. VERIFICATION OPTIONS -->
+            <div class="golx-filter-group no-border">
+                <label class="golx-group-label">VERIFIED STATUS</label>
+                <label class="golx-check-item">
+                    <input type="checkbox" id="vetOnlyCheck">
+                    <span><i class="fa-solid fa-shield-halved text-success"></i> Cow Aadhaar / Geo-verified</span>
+                </label>
+            </div>
+        </aside>
+
+        <!-- ================================================================= -->
+        <!-- RIGHT LISTINGS FEED (Clean Modern Cards from Picture 2) -->
+        <!-- ================================================================= -->
+        <section class="olx-feed">
+            <!-- Feed Header -->
+            <div class="feed-header-line">
+                <h3 class="results-heading"><span id="resultsCountDisplay">0</span> listings found</h3>
+                
+                <!-- Active Chips Strip -->
+                <div class="active-chips-strip hidden" id="activeChipsStrip"></div>
+            </div>
+
+            <!-- THE CLEAN GOLX CARDS GRID -->
+            <div class="golx-cards-grid" id="olxCardsGrid">
+                <!-- Injected dynamically by app.js -->
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-feed-box hidden" id="emptyFeedBox">
+                <div class="empty-img"><i class="fa-solid fa-cow"></i></div>
+                <h3>No cattle found matching your filter criteria</h3>
+                <p>Try widening your price range, choosing "All Breeds", or resetting your filters.</p>
+                <button class="btn-reset-feed" id="resetEmptyFeedBtn">Reset All Filters</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="olx-footer">
+        <div class="footer-top-strip container">
+            <div class="footer-col">
+                <h4>POPULAR COW BREEDS</h4>
+                <ul>
+                    <li><a href="javascript:void(0)" class="footer-breed-link" data-breed="Gir">Gir Cow (गीर गाय)</a></li>
+                    <li><a href="javascript:void(0)" class="footer-breed-link" data-breed="Punganur">Punganur Miniature Cow</a></li>
+                    <li><a href="javascript:void(0)" class="footer-breed-link" data-breed="Sahiwal">Sahiwal Cow (साहीवाल)</a></li>
+                    <li><a href="javascript:void(0)" class="footer-breed-link" data-breed="Rathi">Rathi Cow (राठी)</a></li>
+                    <li><a href="javascript:void(0)" class="footer-breed-link" data-breed="Holstein Friesian">HF Cross (एचएफ)</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>TOP LIVESTOCK STATES</h4>
+                <ul>
+                    <li><a href="javascript:void(0)" class="footer-loc-link" data-loc="Punjab">Punjab Cattle Mandi</a></li>
+                    <li><a href="javascript:void(0)" class="footer-loc-link" data-loc="Haryana">Haryana Murrah Buffaloes</a></li>
+                    <li><a href="javascript:void(0)" class="footer-loc-link" data-loc="Gujarat">Gujarat Gir Cows</a></li>
+                    <li><a href="javascript:void(0)" class="footer-loc-link" data-loc="Rajasthan">Rajasthan Desi Cattle</a></li>
+                    <li><a href="javascript:void(0)" class="footer-loc-link" data-loc="Andhra Pradesh">Andhra Pradesh Punganur</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>VERIFICATION & SAFETY</h4>
+                <ul>
+                    <li><a href="javascript:void(0)"><i class="fa-solid fa-shield-halved text-success"></i> Cow Aadhaar Verification</a></li>
+                    <li><a href="javascript:void(0)"><i class="fa-solid fa-location-dot text-success"></i> Geo-Verified Farm Visits</a></li>
+                    <li><a href="javascript:void(0)"><i class="fa-solid fa-droplet text-success"></i> Morning & Evening Milk Testing</a></li>
+                    <li><a href="javascript:void(0)"><i class="fa-solid fa-truck text-success"></i> Inter-State Transit Permits</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col brand-col">
+                <h4>PASHUOLX</h4>
+                <p>India's cleanest digital platform to buy, sell, and adopt purebred Indian Desi cows and high-yield dairy livestock with zero middlemen.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-strip">
+            <div class="container bottom-inner">
+                <div class="footer-copyright">
+                    <strong>PashuOLX / GoLX Marketplace</strong> &bull; Empowering Indian Dairy Farmers & Breed Conservation.
+                </div>
+                <div class="footer-legal">
+                    <span>All rights reserved &copy; 2026</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================================================= -->
+    <!-- MODAL 1: ITEM DETAIL VIEW -->
+    <!-- ========================================================================= -->
+    <div class="olx-modal-overlay hidden" id="itemDetailModal">
+        <div class="modal-window item-detail-window">
+            <button class="modal-close-icon" id="closeDetailModalBtn">&times;</button>
+            <div class="detail-page-layout" id="detailPageContent">
+                <!-- Dynamically generated by app.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- MODAL 2: "+ SELL" CATTLE WIZARD -->
+    <!-- ========================================================================= -->
+    <div class="olx-modal-overlay hidden" id="sellWizardModal">
+        <div class="modal-window sell-wizard-window">
+            <button class="modal-close-icon" id="closeSellModalBtn">&times;</button>
+            
+            <div class="wizard-header">
+                <h2>POST YOUR LIVESTOCK AD</h2>
+                <p>Fill in authentic details to reach verified dairy buyers across India</p>
+            </div>
+
+            <form id="sellCattleForm" class="sell-form">
+                <div class="form-section-block">
+                    <h3>1. ANIMAL CATEGORY & BREED</h3>
+                    <div class="form-row-2">
+                        <div class="input-field">
+                            <label>Livestock Category *</label>
+                            <select id="sellCategory" required>
+                                <option value="cow">Cow (गाय)</option>
+                                <option value="buffalo">Buffalo (भैंस)</option>
+                                <option value="calf">Calf (बछिया / बछड़ा)</option>
+                                <option value="bull">Bull / Stud (सांड / झोटा)</option>
+                                <option value="heifer">Heifer (बछिया)</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label>Breed Name *</label>
+                            <select id="sellBreed" required>
+                                <option value="Gir">Gir (गीर)</option>
+                                <option value="Punganur">Punganur (పుంగనూరు / पुंगनूर)</option>
+                                <option value="Murrah">Murrah (मुर्राह)</option>
+                                <option value="Sahiwal">Sahiwal (साहीवाल)</option>
+                                <option value="Holstein Friesian">HF Cross (एचएफ)</option>
+                                <option value="Rathi">Rathi (राठी)</option>
+                                <option value="Jafarabadi">Jafarabadi (जाफराबादी)</option>
+                                <option value="Desi">Local / Mixed (देसी)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section-block">
+                    <h3>2. SPECIFICATIONS & HEALTH</h3>
+                    <div class="form-row-3">
+                        <div class="input-field">
+                            <label>Daily Milk Yield (Liters/day) *</label>
+                            <input type="number" id="sellMilk" min="0" max="45" step="0.5" placeholder="e.g. 16.5" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Gender / Type *</label>
+                            <select id="sellGender" required>
+                                <option value="Cow (Female)">Cow (Female)</option>
+                                <option value="Bull (Male)">Bull (Male)</option>
+                                <option value="Female Calf">Female Calf ♀</option>
+                                <option value="Male Calf">Male Calf ♂</option>
+                                <option value="Heifer">Heifer</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label>Age (e.g. 3y 8m) *</label>
+                            <input type="text" id="sellAge" placeholder="e.g. 3y 8m" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section-block">
+                    <h3>3. TITLE, PRICE & LOCATION</h3>
+                    <div class="input-field full">
+                        <label>Ad Title *</label>
+                        <input type="text" id="sellTitle" placeholder="e.g. Pungunru Cow 1st Lactation Healthy & Active" required>
+                    </div>
+
+                    <div class="form-row-2">
+                        <div class="input-field">
+                            <label>Asking Price (₹) *</label>
+                            <input type="number" id="sellPrice" min="0" max="1000000" step="1000" placeholder="e.g. 85000 (0 for adoption)" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Listing Type *</label>
+                            <select id="sellListingType" required>
+                                <option value="sale">For Sale (Negotiable)</option>
+                                <option value="adoption">For Adoption (मुफ्त / गौ सेवा)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row-2">
+                        <div class="input-field">
+                            <label>State *</label>
+                            <select id="sellState" required>
+                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                <option value="Gujarat">Gujarat</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label>City / District *</label>
+                            <input type="text" id="sellLocation" placeholder="e.g. East Godavari" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row-2">
+                        <div class="input-field">
+                            <label>Seller Name *</label>
+                            <input type="text" id="sellSellerName" placeholder="e.g. Ramesh Patel" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Phone / WhatsApp *</label>
+                            <input type="tel" id="sellPhone" placeholder="e.g. 9825012345" required>
+                        </div>
+                    </div>
+
+                    <div class="input-field full">
+                        <label>Photo Selection</label>
+                        <select id="sellPhotoPreset">
+                            <option value="preset-gir">Preset: Gir Cow</option>
+                            <option value="preset-punganur">Preset: Punganur Dwarf Cow</option>
+                            <option value="preset-murrah">Preset: Murrah Buffalo</option>
+                            <option value="preset-sahiwal">Preset: Sahiwal Cow</option>
+                            <option value="preset-hf">Preset: HF Cross Cow</option>
+                        </select>
+                    </div>
+
+                    <div class="input-field full">
+                        <label>Description</label>
+                        <textarea id="sellDesc" rows="3" placeholder="Describe temperament, calf details, vaccination and milking schedule..."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-actions-bar">
+                    <button type="button" class="btn-cancel" id="cancelSellBtn">Cancel</button>
+                    <button type="submit" class="btn-publish-ad"><i class="fa-solid fa-check"></i> Post Listing Now</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- MODAL 3: IN-APP LIVE CHAT -->
+    <!-- ========================================================================= -->
+    <div class="olx-modal-overlay hidden" id="chatModal">
+        <div class="modal-window chat-window">
+            <div class="chat-header">
+                <div class="chat-seller-meta">
+                    <div class="chat-avatar"><i class="fa-solid fa-user"></i></div>
+                    <div>
+                        <h4 id="chatSellerTitle">Seller Name</h4>
+                        <span class="online-indicator"><span class="dot"></span> Online on PashuOLX</span>
+                    </div>
+                </div>
+                <button class="modal-close-icon relative" id="closeChatModalBtn">&times;</button>
+            </div>
+
+            <div class="chat-ad-banner" id="chatAdBanner">
+                <img src="" id="chatAdThumb" alt="Cattle Thumb">
+                <div class="chat-ad-info">
+                    <strong id="chatAdTitle">Title</strong>
+                    <span id="chatAdPrice">₹ 85.0K</span>
+                </div>
+            </div>
+
+            <div class="chat-messages-container" id="chatMessagesContainer">
+                <!-- Chat messages -->
+            </div>
+
+            <div class="chat-quick-chips">
+                <button class="chip-btn" data-reply="Is this cow/buffalo still available?">Is it available?</button>
+                <button class="chip-btn" data-reply="Can I come for a physical milking test tomorrow morning?">Milking test tomorrow?</button>
+                <button class="chip-btn" data-reply="What is your final best price?">Best price?</button>
+            </div>
+
+            <form class="chat-input-bar" id="chatSendForm">
+                <input type="text" id="chatInputText" placeholder="Type a message to the seller..." autocomplete="off">
+                <button type="submit" class="btn-chat-send" title="Send Message">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div class="olx-toast-container" id="toastContainer"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1509 @@
+/* ==========================================================================
+   PASHUOLX / GOLX - MODERN CLEAN LIVESTOCK MARKETPLACE STYLESHEET
+   Aesthetic: Clean Fresh White (#ffffff), Slate Grey (#f8fafc), Emerald (#00875a),
+   Mint Badges (#dcfce7), Dark Slate Typography (#0f172a), Refined Rounded Design
+   ========================================================================== */
+
+:root {
+    --brand-primary: #00875a;       /* GoLX Green */
+    --brand-primary-hover: #00704a;
+    --brand-primary-light: #ecfdf5;
+    
+    --badge-mint: #dcfce7;
+    --badge-mint-text: #15803d;
+    --badge-blue: #2563eb;
+    
+    --bg-page: #f8fafc;             /* Ultra clean soft slate grey */
+    --bg-white: #ffffff;
+    --border-color: #e2e8f0;
+    --border-subtle: #f1f5f9;
+    
+    --text-primary: #0f172a;        /* Deep clean slate */
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --text-danger: #ef4444;
+
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-heading: 'Outfit', sans-serif;
+
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+    --shadow-card: 0 4px 16px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -2px rgba(15, 23, 42, 0.04);
+    --shadow-hover: 0 12px 28px -4px rgba(15, 23, 42, 0.12);
+    --shadow-modal: 0 20px 45px -10px rgba(15, 23, 42, 0.35);
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 18px;
+    --radius-card: 20px;
+    --radius-pill: 9999px;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1260px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.text-success { color: var(--brand-primary) !important; }
+.text-amber { color: #f59e0b !important; }
+
+/* ==========================================================================
+   1. TOP NAVIGATION HEADER
+   ========================================================================== */
+.olx-header {
+    background-color: var(--bg-white);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    height: 74px;
+}
+
+.olx-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+}
+
+.logo-icon-svg {
+    width: 42px;
+    height: 42px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--brand-primary) 0%, #047857 100%);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    box-shadow: 0 4px 10px rgba(0, 135, 90, 0.25);
+}
+
+.logo-text {
+    font-family: var(--font-heading);
+    font-size: 1.65rem;
+    font-weight: 900;
+    color: #0f172a;
+    letter-spacing: -0.03em;
+}
+
+.logo-accent {
+    color: var(--brand-primary);
+}
+
+.olx-search-box {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-pill);
+    background-color: #f8fafc;
+    height: 48px;
+    padding: 0 0.35rem 0 1.25rem;
+    transition: all 0.2s ease;
+}
+
+.olx-search-box:focus-within {
+    background-color: #ffffff;
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 3px rgba(0, 135, 90, 0.12);
+}
+
+.search-leading-icon {
+    color: #94a3b8;
+    margin-right: 0.75rem;
+    font-size: 1rem;
+}
+
+.olx-search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.search-submit-btn {
+    background-color: var(--brand-primary);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.5rem 1.4rem;
+    border-radius: var(--radius-pill);
+    transition: background-color 0.2s ease;
+}
+
+.search-submit-btn:hover {
+    background-color: var(--brand-primary-hover);
+}
+
+.header-user-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-icon-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.85rem;
+    border-radius: var(--radius-pill);
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.header-icon-btn:hover {
+    background-color: #f1f5f9;
+    color: var(--brand-primary);
+}
+
+.header-icon-btn i {
+    font-size: 1.1rem;
+}
+
+.olx-sell-btn {
+    background: linear-gradient(135deg, var(--brand-primary) 0%, #047857 100%);
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 800;
+    padding: 0.65rem 1.4rem;
+    border-radius: var(--radius-pill);
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    box-shadow: 0 4px 14px rgba(0, 135, 90, 0.28);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.olx-sell-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 135, 90, 0.4);
+}
+
+/* ==========================================================================
+   2. HERO BANNER
+   ========================================================================== */
+.olx-promo-strip {
+    background: linear-gradient(135deg, #064e3b 0%, #00875a 50%, #047857 100%);
+    color: #ffffff;
+    padding: 1.5rem 0;
+    margin-bottom: 1.5rem;
+}
+
+.promo-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.promo-text h2 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.25rem;
+}
+
+.promo-text p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.promo-sell-btn {
+    background-color: #ffffff;
+    color: #064e3b;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.65rem 1.4rem;
+    border-radius: var(--radius-pill);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    white-space: nowrap;
+    transition: transform 0.2s ease;
+}
+
+.promo-sell-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   3. BREED QUICK BUBBLES
+   ========================================================================== */
+.breed-bubbles-section {
+    margin-bottom: 2rem;
+}
+
+.bubble-scroll {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    overflow-x: auto;
+    padding: 0.25rem 0;
+    scrollbar-width: none;
+}
+
+.bubble-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.breed-bubble {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.45rem;
+    cursor: pointer;
+    min-width: 82px;
+    transition: transform 0.2s ease;
+}
+
+.breed-bubble:hover {
+    transform: translateY(-3px);
+}
+
+.bubble-icon,
+.bubble-img {
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--bg-white);
+    border: 2px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+    transition: border-color 0.2s ease;
+}
+
+.breed-bubble.active .bubble-icon,
+.breed-bubble.active .bubble-img {
+    border-color: var(--brand-primary);
+    border-width: 3px;
+    box-shadow: 0 0 0 4px var(--brand-primary-light);
+}
+
+.bubble-icon {
+    font-size: 1.5rem;
+    color: var(--brand-primary);
+}
+
+.bubble-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.breed-bubble span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* ==========================================================================
+   4. TWO-COLUMN LAYOUT (Sidebar + Feed)
+   ========================================================================== */
+.main-content-layout {
+    display: grid;
+    grid-template-columns: 290px 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    align-items: start;
+}
+
+/* ==========================================================================
+   5. FILTER LISTINGS SIDEBAR (Exact GoLX Style from Picture 1)
+   ========================================================================== */
+.golx-sidebar-card {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-card);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-card);
+    position: sticky;
+    top: 92px;
+}
+
+.golx-filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1.15rem;
+    border-bottom: 1px solid var(--border-subtle);
+    margin-bottom: 1.25rem;
+}
+
+.golx-filter-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-heading);
+}
+
+.golx-filter-title i {
+    color: var(--brand-primary);
+    font-size: 1.1rem;
+}
+
+.golx-clear-btn {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--text-danger);
+    transition: opacity 0.2s ease;
+}
+
+.golx-clear-btn:hover {
+    text-decoration: underline;
+    opacity: 0.85;
+}
+
+.golx-filter-group {
+    margin-bottom: 1.35rem;
+}
+
+.golx-filter-group.no-border {
+    margin-bottom: 0;
+}
+
+.golx-group-label {
+    display: block;
+    font-size: 0.775rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+}
+
+.golx-split-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.golx-val-badge {
+    background-color: var(--brand-primary-light);
+    color: var(--brand-primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius-sm);
+}
+
+/* Pills Row / Wrap (Exact GoLX Badges) */
+.golx-pills-row,
+.golx-pills-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.golx-pill {
+    padding: 0.45rem 1.05rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-white);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.15s ease;
+}
+
+.golx-pill:hover {
+    border-color: var(--brand-primary);
+    color: var(--brand-primary);
+}
+
+.golx-pill.active {
+    background-color: var(--brand-primary);
+    border-color: var(--brand-primary);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.golx-pill.pill-adoption {
+    background-color: #fffbeb;
+    border-color: #fde68a;
+    color: #92400e;
+}
+
+.golx-pill.pill-adoption.active {
+    background-color: #f59e0b;
+    border-color: #f59e0b;
+    color: #ffffff;
+}
+
+/* Select Dropdown Wrap with Chevron */
+.golx-select-wrap {
+    position: relative;
+    width: 100%;
+}
+
+.golx-select {
+    width: 100%;
+    padding: 0.65rem 2rem 0.65rem 0.85rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background-color: var(--bg-white);
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    appearance: none;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.golx-select:focus {
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 3px rgba(0, 135, 90, 0.1);
+}
+
+.select-chevron {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    pointer-events: none;
+}
+
+/* Price Range Inputs */
+.golx-price-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.65rem;
+}
+
+.golx-price-inputs input {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.golx-price-inputs input:focus {
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 3px rgba(0, 135, 90, 0.1);
+}
+
+.golx-range {
+    width: 100%;
+    accent-color: var(--brand-primary);
+    margin-top: 0.35rem;
+}
+
+.range-limits {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.725rem;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+}
+
+.golx-check-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.golx-check-item input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--brand-primary);
+}
+
+/* ==========================================================================
+   6. RIGHT FEED AREA (Cards Grid matching Picture 2)
+   ========================================================================== */
+.olx-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.feed-header-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.results-heading {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+.results-heading span {
+    color: var(--text-primary);
+    font-weight: 800;
+}
+
+.active-chips-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.filter-chip {
+    background-color: #f1f5f9;
+    color: var(--text-primary);
+    font-size: 0.775rem;
+    font-weight: 600;
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--radius-pill);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.filter-chip i {
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+.filter-chip i:hover {
+    color: var(--text-danger);
+}
+
+/* ==========================================================================
+   7. GOLX CARDS GRID & CARD DESIGN (Exact Picture 2 Layout)
+   ========================================================================== */
+.golx-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.golx-card {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.golx-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Card Media Header */
+.golx-card-media {
+    position: relative;
+    width: 100%;
+    height: 210px;
+    background-color: #0f172a;
+    overflow: hidden;
+}
+
+.golx-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.golx-card:hover .golx-img {
+    transform: scale(1.05);
+}
+
+/* Left Badges (Cow Aadhaar / Geo verified) */
+.golx-media-badges-left {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 2;
+}
+
+.badge-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: var(--radius-pill);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    letter-spacing: 0.02em;
+}
+
+.badge-aadhaar {
+    background-color: var(--badge-blue);
+    color: #ffffff;
+}
+
+.badge-geo {
+    background-color: #059669;
+    color: #ffffff;
+}
+
+/* Right Badge (Negotiable) */
+.golx-media-badges-right {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+}
+
+.badge-negotiable {
+    background-color: var(--badge-mint);
+    color: var(--badge-mint-text);
+    font-size: 0.725rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: var(--radius-pill);
+}
+
+/* Floating White Round Favorite Heart Button (Bottom-Right of Image) */
+.golx-fav-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+    color: #64748b;
+    z-index: 2;
+    transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.golx-fav-btn:hover {
+    transform: scale(1.1);
+    color: var(--text-danger);
+}
+
+.golx-fav-btn.active {
+    color: var(--text-danger);
+}
+
+/* Card Body */
+.golx-card-body {
+    padding: 1.15rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Breed Tag (Light Green Pill) */
+.golx-breed-pill {
+    background-color: var(--brand-primary-light);
+    color: #047857;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 6px;
+    width: fit-content;
+    margin-bottom: 0.45rem;
+}
+
+.golx-card-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.35;
+    margin-bottom: 0.35rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.golx-card-sub {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 0.85rem;
+}
+
+/* Card Bottom (Price & Location) */
+.golx-card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: auto;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.golx-card-price {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+}
+
+.golx-card-loc {
+    font-size: 0.775rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    max-width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.golx-card-loc i {
+    color: var(--brand-primary);
+}
+
+/* Empty State */
+.empty-feed-box {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: var(--bg-white);
+    border-radius: var(--radius-card);
+    border: 1px dashed var(--border-color);
+}
+
+.empty-img {
+    font-size: 3.5rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.empty-feed-box h3 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.empty-feed-box p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-reset-feed {
+    background-color: var(--brand-primary);
+    color: #ffffff;
+    font-weight: 700;
+    padding: 0.75rem 1.6rem;
+    border-radius: var(--radius-pill);
+}
+
+/* ==========================================================================
+   8. FOOTER
+   ========================================================================== */
+.olx-footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    border-top: 1px solid #1e293b;
+}
+
+.footer-top-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 3.5rem 1.25rem 2.5rem;
+}
+
+.footer-col h4 {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.05em;
+    font-family: var(--font-heading);
+}
+
+.footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.footer-col a {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    transition: color 0.15s ease;
+}
+
+.footer-col a:hover {
+    color: #ffffff;
+}
+
+.brand-col p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.social-icons a {
+    width: 34px;
+    height: 34px;
+    background-color: #1e293b;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.social-icons a:hover {
+    background-color: var(--brand-primary);
+}
+
+.footer-bottom-strip {
+    background-color: #090d16;
+    color: #64748b;
+    padding: 1.25rem 0;
+    font-size: 0.8rem;
+    border-top: 1px solid #1e293b;
+}
+
+.bottom-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ==========================================================================
+   9. MODALS & WINDOWS (Detail, Sell Wizard, Chat)
+   ========================================================================== */
+.olx-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.modal-window {
+    background-color: var(--bg-white);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-modal);
+    position: relative;
+    max-height: 92vh;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.modal-close-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    font-size: 1.85rem;
+    color: var(--text-muted);
+    z-index: 10;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.15s ease;
+}
+
+.modal-close-icon.relative {
+    position: static;
+}
+
+.modal-close-icon:hover {
+    background-color: #f1f5f9;
+    color: var(--text-primary);
+}
+
+/* Item Detail Modal */
+.item-detail-window {
+    max-width: 1060px;
+    padding: 0;
+}
+
+.detail-page-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    background-color: #f8fafc;
+    gap: 1.25rem;
+    padding: 1.5rem;
+}
+
+.detail-left-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.detail-gallery-box {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+}
+
+.main-hero-image-wrap {
+    width: 100%;
+    height: 400px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    position: relative;
+    background-color: #0f172a;
+}
+
+.main-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.detail-specs-box,
+.detail-desc-box {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+}
+
+.detail-specs-box h3,
+.detail-desc-box h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 0.5rem;
+}
+
+.specs-data-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+}
+
+.spec-cell {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid #f8fafc;
+    font-size: 0.9rem;
+}
+
+.spec-cell .cell-label {
+    color: var(--text-muted);
+}
+
+.spec-cell .cell-value {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.detail-right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.detail-price-card,
+.detail-seller-card,
+.detail-safety-box {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+}
+
+.detail-big-price {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+}
+
+.detail-ad-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0.5rem 0 1rem;
+}
+
+.detail-loc-date {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.seller-meta-top {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.seller-avatar-big {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--brand-primary-light);
+    color: var(--brand-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.btn-chat-seller {
+    width: 100%;
+    background-color: var(--brand-primary);
+    color: #ffffff;
+    font-weight: 700;
+    padding: 0.85rem;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    transition: background-color 0.2s ease;
+}
+
+.btn-chat-seller:hover {
+    background-color: var(--brand-primary-hover);
+}
+
+.btn-call-seller {
+    width: 100%;
+    border: 2px solid var(--brand-primary);
+    color: var(--brand-primary);
+    font-weight: 700;
+    padding: 0.85rem;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* Sell Wizard Modal */
+.sell-wizard-window {
+    max-width: 800px;
+    padding: 2.25rem;
+}
+
+.wizard-header {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+.wizard-header h2 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.sell-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-section-block h3 {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--brand-primary);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.85rem;
+}
+
+.form-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 0.85rem;
+}
+
+.form-row-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 0.85rem;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.input-field.full {
+    margin-bottom: 0.85rem;
+}
+
+.input-field label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.input-field input,
+.input-field select,
+.input-field textarea {
+    padding: 0.75rem 0.85rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    outline: none;
+    font-size: 0.95rem;
+}
+
+.input-field input:focus,
+.input-field select:focus,
+.input-field textarea:focus {
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 3px rgba(0, 135, 90, 0.12);
+}
+
+.form-actions-bar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.25rem;
+}
+
+.btn-cancel {
+    padding: 0.75rem 1.4rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.btn-publish-ad {
+    background-color: var(--brand-primary);
+    color: #ffffff;
+    font-weight: 700;
+    padding: 0.75rem 1.8rem;
+    border-radius: var(--radius-pill);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Chat Window */
+.chat-window {
+    max-width: 480px;
+    height: 580px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 1rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-seller-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.chat-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: #334155;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-ad-banner {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 1rem;
+    background-color: #f1f5f9;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.chat-ad-banner img {
+    width: 48px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+}
+
+.chat-messages-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background-color: #f8fafc;
+}
+
+.chat-msg {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+.chat-msg.system {
+    max-width: 100%;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    background-color: #e2e8f0;
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-sm);
+}
+
+.chat-msg.seller { align-self: flex-start; }
+.chat-msg.buyer { align-self: flex-end; }
+
+.chat-msg .bubble {
+    padding: 0.65rem 0.95rem;
+    font-size: 0.9rem;
+    border-radius: var(--radius-md);
+    line-height: 1.4;
+}
+
+.chat-msg.seller .bubble {
+    background-color: #ffffff;
+    color: var(--text-primary);
+    border-bottom-left-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.chat-msg.buyer .bubble {
+    background-color: var(--brand-primary);
+    color: #ffffff;
+    border-bottom-right-radius: 2px;
+}
+
+.chat-msg .time {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+    align-self: flex-end;
+}
+
+.chat-quick-chips {
+    padding: 0.5rem 1rem;
+    background-color: #ffffff;
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.chip-btn {
+    white-space: nowrap;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--brand-primary);
+    background-color: var(--brand-primary-light);
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--radius-pill);
+}
+
+.chat-input-bar {
+    display: flex;
+    padding: 0.75rem 1rem;
+    background-color: #ffffff;
+    border-top: 1px solid var(--border-color);
+    gap: 0.6rem;
+}
+
+.chat-input-bar input {
+    flex: 1;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-pill);
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.btn-chat-send {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--brand-primary);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Toast */
+.olx-toast-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.olx-toast {
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 0.85rem 1.4rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-modal);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    border-left: 4px solid var(--brand-primary);
+    animation: toastIn 0.3s ease forwards;
+}
+
+@keyframes toastIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   10. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1080px) {
+    .golx-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .main-content-layout {
+        grid-template-columns: 260px 1fr;
+    }
+}
+
+@media (max-width: 868px) {
+    .main-content-layout {
+        grid-template-columns: 1fr;
+    }
+    .golx-sidebar-card {
+        position: static;
+    }
+    .detail-page-layout {
+        grid-template-columns: 1fr;
+    }
+    .footer-top-strip {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 580px) {
+    .header-inner {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 0.75rem 0.5rem;
+    }
+    .olx-search-box {
+        order: 3;
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+    .golx-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-top-strip {
+        grid-template-columns: 1fr;
+    }
+    .bottom-inner {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+}
